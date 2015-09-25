@@ -12,6 +12,9 @@
 !/log/.keep
 /tmp
 
+# Ignore Spring files.
+/spring/*.pid
+
 # Ignore Mac OS X files
 *.DS_Store
 */.DS_Store

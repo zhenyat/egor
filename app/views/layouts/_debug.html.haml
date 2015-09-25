@@ -1,0 +1,7 @@
+%p
+  Версии:
+  %br
+    = "#{RUBY_ENGINE}-#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL} | Rails: #{Rails.version}"
+    %br
+    - if Rails.env.development?
+      = "Git Branch: #{GIT_BRANCH}; Commit: #{GIT_COMMIT} (#{l GIT_COMMIT_TIMESTAMP, format: '%d.%m.%Y %H:%M'})"
