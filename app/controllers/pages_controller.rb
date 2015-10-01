@@ -1,9 +1,9 @@
 class PagesController < ApplicationController
   def home
-    @page_title = :home_page
+    @page_title ='Home'
   end
 
   def help
-    @page_title = :help_page
+    # title to be set via provide method in the View
   end
 end

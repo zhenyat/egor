@@ -56,18 +56,22 @@ end
 
   ##############################################################################
   # Return a title on a per-page basis with localization
-  # Source:  Michael Hartl
+  # Source:  Michael Hartl (Chapter 4, Listing 4.2)
   #
   # 15.12.2013  Created
-  # 19.12.2013  Approach modified
-  # 28.12.2003  Updated
-  # 25.09.2015  Updated
+  # 29.09.2015  Last update
   ##############################################################################
-  def page_title
-    if controller_name == 'pages'
-      title = @page_title || t("#{action_name}_page")
+  def page_title(provided_title = '')
+    if provided_title.empty?
+      if controller_name == 'pages'
+#       title = @page_title || ("#{t action_name.capitalize}")
+        title = @page_title || ("#{action_name.capitalize}")
+      else
+#       title = @page_title || "#{t controller_name.capitalize}-#{t action_name.capitalize}"
+        title = @page_title || "#{controller_name.capitalize}-#{action_name.capitalize}"
+      end
     else
-      title = @page_title || "#{t controller_name}-#{t action_name}"
+      title = provided_title    # Title is set via provide method in a View
     end
     "#{app_name} | #{title}"
   end

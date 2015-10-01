@@ -1,5 +1,13 @@
-%header
-  = favicon_link_tag  'site/favicon.ico'
-  = link_to image_tag('site/logo.jpg', alt: "Go to Home page", title: 'To Home'), root_path
-  %h1 Documents Collection
-  %h2 Managed by Egor Kozlov
+%header.navbar.navbar-fixed-top.navbar-inverse
+  .container
+    = link_to image_tag('site/logo.jpg', alt: "Go to Home page", title: 'To Home'), root_path
+    /%h1 Documents Collection
+    /%h2 Managed by Egor Kozlov
+
+    %nav
+      %ul.nav.navbar-nav.navbar-right
+        %li= link_to "Home",   root_path
+        %li= link_to "Help",   pages_help_path
+        %li= link_to "Log in", '#'
+
+

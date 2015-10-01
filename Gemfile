@@ -66,7 +66,7 @@ end
 group :test do
   gem 'minitest-reporters'
   gem 'mini_backtrace'
-  gem 'guard'
+  gem 'guard'                        # To automate the running of the tests(M.Hartl, 3.7.3)
   gem 'guard-minitest'
 end
 
